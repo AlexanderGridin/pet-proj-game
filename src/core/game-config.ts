@@ -1,5 +1,5 @@
-import { GameConfig } from "./core/type-aliases";
-import { IntroScene } from "./scenes/intro-scene/intro-scene";
+import { GameConfig } from "./type-aliases";
+import { IntroScene } from "../scenes/intro-scene/intro-scene";
 
 export const GAME_CONFIG: GameConfig = {
   type: Phaser.AUTO,
