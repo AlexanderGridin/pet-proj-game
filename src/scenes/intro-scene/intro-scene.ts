@@ -94,6 +94,10 @@ export class IntroScene
     this.applesCounter++;
 
     this.applesCollected.text = this.coinsText;
+
+    if (this.applesCounter % 10 === 0) {
+      this.scene.restart();
+    }
   }
 
   private preloadAssets(): void {
