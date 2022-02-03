@@ -9,6 +9,7 @@ import {
 } from "../../core/hooks";
 import { Apples } from "../../entities/apples";
 import { Text } from "../../core/type-aliases";
+import { IS_DEBUG_MODE } from "../../core/game-config";
 
 export class IntroScene
   extends GameScene
@@ -101,6 +102,11 @@ export class IntroScene
 
   private putAssetsIntoScene(): void {
     this.add.tileSprite(0, 0, this.width, this.height, "dirt").setOrigin(0);
+
+    IS_DEBUG_MODE &&
+      this.add
+        .grid(0, 0, this.width, this.height, 64, 64, 100, 0.3)
+        .setOrigin(0);
   }
 
   private get coinsText(): string {
