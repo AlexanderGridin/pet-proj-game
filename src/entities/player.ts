@@ -1,9 +1,10 @@
-import { GameScene } from "../core/game-scene";
+import { GameScene } from "../core/type-aliases";
 import { Keyboard } from "../controls/keyboard";
+import { CreateHook, PreloadHook, UpdateHook } from "../core/hooks";
 
-export class Player {
-  private player!: Phaser.Types.Physics.Arcade.ImageWithDynamicBody;
-  private velocity: number = 100;
+export class Player implements PreloadHook, CreateHook, UpdateHook {
+  public player!: Phaser.Types.Physics.Arcade.ImageWithDynamicBody;
+  private velocity: number = 300;
 
   constructor(
     private readonly scene: GameScene,
@@ -11,15 +12,13 @@ export class Player {
   ) {}
 
   public preload(): void {
-    this.scene.load.image("player", "assets/pointer.png");
+    this.scene.load.image("player", "assets/player.jpg");
   }
 
   public create(): void {
-    this.player = this.scene.physics.add.image(
-      this.scene.scale.width / 2,
-      this.scene.scale.height / 2,
-      "player"
-    );
+    this.player = this.scene.physics.add
+      .image(this.scene.scale.width / 2, this.scene.scale.height / 2, "player")
+      .setScale(0.5);
   }
 
   public update(): void {
