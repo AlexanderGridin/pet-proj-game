@@ -8,5 +8,11 @@ export const GAME_CONFIG: GameConfig = {
   scene: [IntroScene],
   physics: {
     default: "arcade",
+    arcade: {
+      // gravity: {
+      //   y: 200,
+      // },
+      debug: true,
+    },
   },
 };
