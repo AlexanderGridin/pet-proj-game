@@ -12,3 +12,5 @@ export class ArcadeStaticBody extends Phaser.Physics.Arcade.StaticBody {}
 
 export type ArcadeGameObjectWithBody =
   Phaser.Types.Physics.Arcade.GameObjectWithBody;
+
+export class Text extends Phaser.GameObjects.Text {}
