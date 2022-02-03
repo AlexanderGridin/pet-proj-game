@@ -104,6 +104,6 @@ export class IntroScene
   }
 
   private get coinsText(): string {
-    return `Coins: ${this.applesCounter}`;
+    return `Apples collected: ${this.applesCounter}`;
   }
 }
