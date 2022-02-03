@@ -72,3 +72,31 @@ public create(): void {
   this.physics.add.collider(items, player);
 }
 ```
+
+## Find out from Arcade Physics if the player's physics body is touching something
+
+```typescript
+this.player.body.touching.down;
+this.player.body.touching.left;
+this.player.body.touching.right;
+this.player.body.touching.up;
+this.player.body.touching.none;
+```
+
+## Disable collision checking
+
+```typescript
+this.player.body.checkCollision.up = false;
+this.player.body.checkCollision.down = false;
+this.player.body.checkCollision.left = false;
+this.player.body.checkCollision.right = false;
+this.player.body.checkCollision.none = false;
+```
+
+## Camera follows the Player
+
+```typescript
+public create(): void {
+  this.cameras.main.startFollow(player);
+}
+```
