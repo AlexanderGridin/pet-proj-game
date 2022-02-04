@@ -1,4 +1,4 @@
-import { GameScene } from "../core/game-scene";
+import { GameScene } from "../core/type-aliases";
 
 const keyboardKeys: string = "W,A,S,D";
 
