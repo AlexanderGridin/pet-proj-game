@@ -44,6 +44,10 @@ export class IntroScene
     this.apples.preload();
   }
 
+  private preloadAssets(): void {
+    this.load.image("dirt", "assets/grass_top.png");
+  }
+
   // * hook, that get called at appropriate time by Phaser
   // * create() is called once all the assets for the Scene have been loaded
   public create(): void {
@@ -67,6 +71,15 @@ export class IntroScene
         y: 10,
       },
     });
+  }
+
+  private putAssetsIntoScene(): void {
+    this.add.tileSprite(0, 0, this.width, this.height, "dirt").setOrigin(0);
+
+    IS_DEBUG_MODE &&
+      this.add
+        .grid(0, 0, this.width, this.height, 64, 64, 100, 0.3)
+        .setOrigin(0);
   }
 
   // * hook, that get called at appropriate time by Phaser
@@ -98,19 +111,6 @@ export class IntroScene
     if (this.applesCounter % 10 === 0) {
       this.scene.restart();
     }
-  }
-
-  private preloadAssets(): void {
-    this.load.image("dirt", "assets/grass_top.png");
-  }
-
-  private putAssetsIntoScene(): void {
-    this.add.tileSprite(0, 0, this.width, this.height, "dirt").setOrigin(0);
-
-    IS_DEBUG_MODE &&
-      this.add
-        .grid(0, 0, this.width, this.height, 64, 64, 100, 0.3)
-        .setOrigin(0);
   }
 
   private get coinsText(): string {

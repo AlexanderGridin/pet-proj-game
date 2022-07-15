@@ -1,6 +1,6 @@
 import { GameScene } from "../core/type-aliases";
 
-const keyboardKeys: string = "W,A,S,D";
+const keyboardKeys: string = "W,A,S,D,SPACE";
 
 export class Keyboard {
   public readonly keys: {
